@@ -3,9 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>API Frontend</title>
 </head>
 <body>
-    
+    <h1>Album Library</h1>
+    <ul>
+        <li id="albumTitle">Title</li>
+        <li id="albumArtist">Artist</li>
+        <li id="albumPrice">Price</li>
+        <li id="albumTracks">Tracks</li>
+    </ul>
+    <button onclick= "getAlbums()">Click for an album</button>
+    <script>
+        async function getAlbums(){
+            // let dataResponse = await fetch('localhost:8081/albums/1');
+            // let album = await dataResponse.json();
+            //let albums = [{"id":1,"title":"Gold","artist":"Abba","price":12.99,"tracks":12},{"id":3,"title":"Money for Nothing","artist":"Dire Straits","price":7.99,"tracks":13},{"id":4,"title":"True","artist":"Spandau Ballet","price":5.99,"tracks":10},{"id":5,"title":"Justin","artist":"Justin Bieber","price":4.99,"tracks":10},{"id":2,"title":"Californication","artist":"Red Hot Chilli Peppers","price":12.99,"tracks":10},{"title":"Whitney","artist":"Whitney Houston","price":"12","tracks":"23"},{"title":"Best of Elton John","artist":"Elton John","price":"12","tracks":"15"}];
+            let album = {"id":1,"title":"Gold","artist":"Abba","price":12.99,"tracks":12};
+            document.getElementById("albumTitle").innerHTML = album.title;
+            document.getElementById("albumArtist").innerHTML = album.artist;
+            document.getElementById("albumPrice").innerHTML = album.price;
+            document.getElementById("albumTracks").innerHTML = album.tracks;
+        }
+    </script>
 </body>
 </html>
