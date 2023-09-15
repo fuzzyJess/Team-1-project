@@ -8,27 +8,23 @@
 <body>
     <h1>Album Library</h1>
     <ul>
-        <li id="albumTitle">abc</li>
-        <li id="albumArtist"></li>
-        <li id="albumPrice"></li>
-        <li id="albumTracks"></li>
+        <li id="albumTitle">Title</li>
+        <li id="albumArtist">Artist</li>
+        <li id="albumPrice">Price</li>
+        <li id="albumTracks">Tracks</li>
     </ul>
-    <p id="test">a</p>
+    <button onclick= "getAlbums()">Click for an album</button>
     <script>
         async function getAlbums(){
-            // let dataResponse = await fetch('localhost:8081/albums');
-            // let albums = await dataResponse.json();
-            let albums = [{"id":1,"title":"Gold","artist":"Abba","price":12.99,"tracks":12},{"id":3,"title":"Money for Nothing","artist":"Dire Straits","price":7.99,"tracks":13},{"id":4,"title":"True","artist":"Spandau Ballet","price":5.99,"tracks":10},{"id":5,"title":"Justin","artist":"Justin Bieber","price":4.99,"tracks":10},{"id":2,"title":"Californication","artist":"Red Hot Chilli Peppers","price":12.99,"tracks":10},{"title":"Whitney","artist":"Whitney Houston","price":"12","tracks":"23"},{"title":"Best of Elton John","artist":"Elton John","price":"12","tracks":"15"}];
-            document.getElementById("test").innerHTML = albums;
-            for (let i=0; i<albums.length; i++) {
-                document.getElementById("albumTitle").innerHTML = albums[i].title;
-                document.getElementById("albumArtist").innerHTML = albums[i].artist;
-                document.getElementById("albumPrice").innerHTML = albums[i].price;
-                document.getElementById("albumTracks").innerHTML = albums[i].tracks;
-            }
-            
+            // let dataResponse = await fetch('localhost:8081/albums/1');
+            // let album = await dataResponse.json();
+            //let albums = [{"id":1,"title":"Gold","artist":"Abba","price":12.99,"tracks":12},{"id":3,"title":"Money for Nothing","artist":"Dire Straits","price":7.99,"tracks":13},{"id":4,"title":"True","artist":"Spandau Ballet","price":5.99,"tracks":10},{"id":5,"title":"Justin","artist":"Justin Bieber","price":4.99,"tracks":10},{"id":2,"title":"Californication","artist":"Red Hot Chilli Peppers","price":12.99,"tracks":10},{"title":"Whitney","artist":"Whitney Houston","price":"12","tracks":"23"},{"title":"Best of Elton John","artist":"Elton John","price":"12","tracks":"15"}];
+            let album = {"id":1,"title":"Gold","artist":"Abba","price":12.99,"tracks":12};
+            document.getElementById("albumTitle").innerHTML = album.title;
+            document.getElementById("albumArtist").innerHTML = album.artist;
+            document.getElementById("albumPrice").innerHTML = album.price;
+            document.getElementById("albumTracks").innerHTML = album.tracks;
         }
-        getAlbums();
     </script>
 </body>
 </html>
