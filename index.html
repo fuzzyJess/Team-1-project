@@ -3,9 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>API Frontend</title>
 </head>
 <body>
-    
+    <h1>Album Library</h1>
+    <p id="albums"></p>
+    <script>
+        async function getAlbums(){
+            let dataResponse = await fetch('localhost:8081/albums');
+            let albums = await dataResponse.json();
+            document.getElementById("albums").innerHTML = albums;
+        }
+    </script>
 </body>
 </html>
