@@ -7,18 +7,23 @@
 </head>
 <body>
     <h1>Album Library</h1>
-    <h3 id="albumTitle"></h3>
-    <h4 id="albumArtist"></h4>
-    <p id="albumPrice"></p>
-    <p id="albumTracks"></p>
+    <ul>
+        <li id="albumTitle"></li>
+        <li id="albumArtist"></li>
+        <li id="albumPrice"></li>
+        <li id="albumTracks"></li>
+    </ul>
     <script>
         async function getAlbums(){
             let dataResponse = await fetch('localhost:8081/albums');
             let albums = await dataResponse.json();
-            document.getElementById("albumTitle").innerHTML = albums.title;
-            document.getElementById("albumArtist").innerHTML = albums.artist;
-            document.getElementById("albumPrice").innerHTML = albums.price;
-            document.getElementById("albumTracks").innerHTML = albums.tracks;
+            for (let i=0; i<albums.length; i++) {
+                document.getElementById("albumTitle").innerHTML = albums[i].title;
+                document.getElementById("albumArtist").innerHTML = albums[i].artist;
+                document.getElementById("albumPrice").innerHTML = albums[i].price;
+                document.getElementById("albumTracks").innerHTML = albums[i].tracks;
+            }
+            
         }
     </script>
 </body>
